@@ -1,0 +1,409 @@
+
+*** Running vivado
+    with args -log VGAController.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGAController.tcl
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source VGAController.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.srcs/utils_1/imports/synth_1/VGAController.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.srcs/utils_1/imports/synth_1/VGAController.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top VGAController -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 165689
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1956.641 ; gain = 371.770 ; free physical = 1631 ; free virtual = 21797
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2981.434; parent = 1956.645; children = 1024.789
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'VGAController' [/home/timdg/Documents/Verilog/Lab5/Lab5/VGAController.v:2]
+INFO: [Synth 8-6157] synthesizing module 'VGATimingGenerator' [/home/timdg/Documents/Verilog/Lab5/Lab5/VGATimingGenerator.v:2]
+	Parameter HEIGHT bound to: 480 - type: integer 
+	Parameter WIDTH bound to: 640 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'VGATimingGenerator' (0#1) [/home/timdg/Documents/Verilog/Lab5/Lab5/VGATimingGenerator.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 9 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 20 - type: integer 
+	Parameter DEPTH bound to: 307200 - type: integer 
+	Parameter MEMFILE bound to: 376'b0111111000101111010001000110111101100011011101010110110101100101011011100111010001110011001011110101011001100101011100100110100101101100011011110110011100101111010011000110000101100010001101010010111101001100011000010110001000110101001011110110001001110010011010010110011101101000011101000101111101100011011011110110110001101111011100100111001100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file '~/Documents/Verilog/Lab5/Lab5/bright_colors.mem' is read successfully [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:2]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ImageData' [/home/timdg/Documents/Verilog/Lab5/Lab5/VGAController.v:68]
+WARNING: [Synth 8-7023] instance 'ImageData' of module 'RAM' has 5 connections declared, but only 4 given [/home/timdg/Documents/Verilog/Lab5/Lab5/VGAController.v:68]
+INFO: [Synth 8-6157] synthesizing module 'RAM__parameterized0' [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 9 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter MEMFILE bound to: 320'b01111110001011110100010001101111011000110111010101101101011001010110111001110100011100110010111101010110011001010111001001101001011011000110111101100111001011110100110001100001011000100011010100101111010011000110000101100010001101010010111101100011011011110110110001101111011100100111001100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file '~/Documents/Verilog/Lab5/Lab5/colors.mem' is read successfully [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'RAM__parameterized0' (0#1) [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:2]
+WARNING: [Synth 8-7071] port 'dataIn' of module 'RAM' is unconnected for instance 'ColorPalette' [/home/timdg/Documents/Verilog/Lab5/Lab5/VGAController.v:125]
+WARNING: [Synth 8-7023] instance 'ColorPalette' of module 'RAM' has 5 connections declared, but only 4 given [/home/timdg/Documents/Verilog/Lab5/Lab5/VGAController.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'VGAController' (0#1) [/home/timdg/Documents/Verilog/Lab5/Lab5/VGAController.v:2]
+WARNING: [Synth 8-7129] Port addr[8] in module RAM__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[19] in module RAM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ps2_clk in module VGAController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ps2_data in module VGAController is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2128.188 ; gain = 543.316 ; free physical = 1651 ; free virtual = 21819
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3152.980; parent = 2128.191; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2128.188 ; gain = 543.316 ; free physical = 1651 ; free virtual = 21819
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3152.980; parent = 2128.191; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2128.188 ; gain = 543.316 ; free physical = 1651 ; free virtual = 21819
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3152.980; parent = 2128.191; children = 1024.789
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2128.188 ; gain = 0.000 ; free physical = 1651 ; free virtual = 21819
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc:1]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc:5]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc:9]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc:35]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc:41]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc:47]
+Finished Parsing XDC File [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/VGAController_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/VGAController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2257.031 ; gain = 0.000 ; free physical = 1581 ; free virtual = 21749
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2257.031 ; gain = 0.000 ; free physical = 1581 ; free virtual = 21749
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1624 ; free virtual = 21792
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1624 ; free virtual = 21792
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1623 ; free virtual = 21791
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1367.466; parent = 1162.098; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1636 ; free virtual = 21806
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1479.272; parent = 1273.946; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 3     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---RAMs : 
+	            2700K Bit	(307200 X 9 bit)          RAMs := 1     
+	               3K Bit	(256 X 12 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP imgAddress, operation Mode is: C+(A:0x280)*B.
+DSP Report: operator imgAddress is absorbed into DSP imgAddress.
+DSP Report: operator imgAddress0 is absorbed into DSP imgAddress.
+WARNING: [Synth 8-7129] Port ps2_clk in module VGAController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ps2_data in module VGAController is either unconnected or has no load
+WARNING: [Synth 8-3936] Found unconnected internal register 'ImageData/dataOut_reg' and it is trimmed from '9' to '8' bits. [/home/timdg/Documents/Verilog/Lab5/Lab5/RAM.v:21]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1607 ; free virtual = 21791
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1479.272; parent = 1273.946; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++---------------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name          | RTL Object      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|RAM:                 | MemoryArray_reg | 300 K x 9(NO_CHANGE)   | W | R |                        |   |   | Port A           | 0      | 90     | 
+|RAM__parameterized0: | MemoryArray_reg | 256 x 12(NO_CHANGE)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++---------------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++--------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|VGAController | C+(A:0x280)*B | 9      | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++--------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1456 ; free virtual = 21640
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1531.886; parent = 1326.560; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1456 ; free virtual = 21640
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++---------------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name          | RTL Object      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|RAM:                 | MemoryArray_reg | 300 K x 9(NO_CHANGE)   | W | R |                        |   |   | Port A           | 0      | 90     | 
+|RAM__parameterized0: | MemoryArray_reg | 256 x 12(NO_CHANGE)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++---------------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_3_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_5_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_7_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ImageData/MemoryArray_reg_9_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ColorPalette/MemoryArray_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1462 ; free virtual = 21646
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|VGAController | C+A*B       | 9      | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    11|
+|3     |DSP48E1  |     1|
+|4     |LUT1     |     8|
+|5     |LUT2     |    24|
+|6     |LUT3     |    14|
+|7     |LUT4     |    29|
+|8     |LUT5     |    29|
+|9     |LUT6     |    43|
+|10    |RAMB18E1 |     1|
+|11    |RAMB36E1 |    80|
+|17    |FDCE     |    20|
+|18    |FDRE     |    24|
+|19    |IBUF     |     6|
+|20    |OBUF     |    14|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1466 ; free virtual = 21650
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1532.394; parent = 1327.067; children = 205.368
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3249.809; parent = 2225.020; children = 1024.789
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2257.031 ; gain = 543.316 ; free physical = 1528 ; free virtual = 21712
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2257.031 ; gain = 672.160 ; free physical = 1528 ; free virtual = 21712
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2257.031 ; gain = 0.000 ; free physical = 1648 ; free virtual = 21832
+INFO: [Netlist 29-17] Analyzing 93 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2257.031 ; gain = 0.000 ; free physical = 1598 ; free virtual = 21782
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 4b083119
+INFO: [Common 17-83] Releasing license: Synthesis
+74 Infos, 12 Warnings, 6 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 2257.031 ; gain = 985.293 ; free physical = 1804 ; free virtual = 21988
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.runs/synth_1/VGAController.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file VGAController_utilization_synth.rpt -pb VGAController_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  1 17:44:15 2023...
