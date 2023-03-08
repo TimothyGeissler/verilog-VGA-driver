@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc rfile:../../../../constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:{/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/constraints.xdc} rfile:../../../../constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 // Clock on E3
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]

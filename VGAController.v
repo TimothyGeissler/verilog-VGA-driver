@@ -64,7 +64,7 @@ module VGAController(
 		.DEPTH(PIXEL_COUNT), 				     // Set RAM depth to contain every pixel
 		.DATA_WIDTH(PALETTE_ADDRESS_WIDTH),      // Set data width according to the color palette
 		.ADDRESS_WIDTH(PIXEL_ADDRESS_WIDTH),     // Set address with according to the pixel count
-		.MEMFILE({FILES_PATH, "bright_colors.mem"})) // Memory initialization
+		.MEMFILE({FILES_PATH, "image.mem"})) // Memory initialization
 	ImageData(
 		.clk(clk), 						 // Falling edge of the 100 MHz clk
 		.addr(imgAddress),					 // Image data address
@@ -104,15 +104,12 @@ module VGAController(
 		always @(BTND) begin
 			sqY = sqY + 1;
 		end
-
 		always @(BTNU) begin
 			sqY = sqY - 1;
 		end
-
 		always @(BTNR) begin
 			sqX = sqX + 1;
 		end
-
 		always @(BTNL) begin
 			sqX = sqX - 1;
 		end*/

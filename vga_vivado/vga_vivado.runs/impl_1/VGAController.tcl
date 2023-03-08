@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.runs/impl_1/VGAController.tcl"
+  variable script "/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/vga_vivado/vga_vivado.runs/impl_1/VGAController.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,8 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -126,22 +124,21 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 4
-  set_param checkpoint.writeSynthRtdsInDcp 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.cache/wt [current_project]
-  set_property parent.project_path /home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.xpr [current_project]
-  set_property ip_output_repo /home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.cache/ip [current_project]
+  set_property webtalk.parent_dir {/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/vga_vivado/vga_vivado.cache/wt} [current_project]
+  set_property parent.project_path {/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/vga_vivado/vga_vivado.xpr} [current_project]
+  set_property ip_output_repo {{/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/vga_vivado/vga_vivado.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.runs/synth_1/VGAController.dcp
+  add_files -quiet {{/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/vga_vivado/vga_vivado.runs/synth_1/VGAController.dcp}}
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/timdg/Documents/Verilog/Lab5/Lab5/constraints.xdc
+  read_xdc {{/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/constraints.xdc}}
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

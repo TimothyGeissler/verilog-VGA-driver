@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/timdg/Documents/Verilog/Lab5/Lab5/vga_vivado/vga_vivado.runs/impl_1'
+HD_PWD='/home/timdg/Documents/Verilog/Lab5 - VGA/Lab5/vga_vivado/vga_vivado.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
